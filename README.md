@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Sonanki💗</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background: #fff7f8;
+  color: #3d252b;
+  overflow-x: hidden;
+}
+
+/* FLOATING HEARTS */
+
+.hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 100;
+}
+
+.heart {
+  position: absolute;
+  bottom: -30px;
+  font-size: 20px;
+  opacity: 0;
+  animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* HERO */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+  position: relative;
+
+  background:
+    radial-gradient(circle at 20% 20%, #ffe1e8 0%, transparent 30%),
+    radial-gradient(circle at 80% 80%, #ffd5df 0%, transparent 30%),
+    linear-gradient(135deg, #fff8f9, #ffe9ee);
+}
+
+.hero-content {
+  max-width: 750px;
+  animation: fadeIn 2s ease;
+}
+
+.small-text {
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: #a75b6c;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(48px, 10vw, 90px);
+  line-height: 1;
+  margin-bottom: 25px;
+  color: #8f354d;
+}
+
+.hero h1 span {
+  display: block;
+  font-style: italic;
+  font-size: 0.65em;
+  color: #b35c72;
+  margin-top: 15px;
+}
+
+.hero p {
+  font-family: Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  max-width: 550px;
+  margin: auto;
+  color: #65434a;
+}
+
+.open-btn {
+  margin-top: 35px;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  background: #9e3f58;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 10px 30px rgba(158, 63, 88, 0.25);
+}
+
+.open-btn:hover {
+  transform: translateY(-4px) scale(1.03);
+  background: #823149;
+}
+
+.scroll {
+  position: absolute;
+  bottom: 25px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  opacity: 0.6;
+}
+
+/* SECTIONS */
+
+section {
+  padding: 90px 20px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-title small {
+  color: #aa536a;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+}
+
+.section-title h2 {
+  margin-top: 10px;
+  font-size: clamp(32px, 6vw, 50px);
+  color: #81344a;
+}
+
+/* LETTER */
+
+.letter-section {
+  background: #fff;
+}
+
+.letter {
+  max-width: 700px;
+  margin: auto;
+  padding: 45px;
+  background: #fffaf1;
+  border-radius: 8px;
+  box-shadow: 0 15px 50px rgba(90, 40, 50, 0.08);
+  position: relative;
+  line-height: 2;
+  font-size: 18px;
+}
+
+.letter::before {
+  content: "♥";
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  color: #d9899d;
+  font-size: 25px;
+}
+
+.letter p {
+  margin-bottom: 20px;
+}
+
+.signature {
+  text-align: right;
+  font-style: italic;
+  font-size: 20px;
+  color: #8f354d;
+}
+
+/* MEMORIES */
+
+.memories {
+  background: #fff0f3;
+}
+
+.timeline {
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #d99aaa;
+  transform: translateX(-50%);
+}
+
+.memory {
+  width: 50%;
+  padding: 20px 40px;
+  position: relative;
+}
+
+.memory:nth-child(odd) {
+  text-align: right;
+}
+
+.memory:nth-child(even) {
+  margin-left: 50%;
+}
+
+.memory::after {
+  content: "♥";
+  position: absolute;
+  top: 25px;
+  right: -12px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  color: #a8445c;
+  background: #fff0f3;
+}
+
+.memory:nth-child(even)::after {
+  left: -12px;
+  right: auto;
+}
+
+.memory h3 {
+  color: #8d3b51;
+  margin-bottom: 8px;
+}
+
+.memory p {
+  font-family: Arial, sans-serif;
+  color: #684a51;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* PHOTOS */
+
+.photos {
+  background: #fff;
+}
+
+.photo-grid {
+  max-width: 900px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.photo {
+  height: 280px;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #f6dfe4;
+  position: relative;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.photo:hover img {
+  transform: scale(1.07);
+}
+
+.photo span {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  padding: 8px;
+  border-radius: 10px;
+  color: white;
+  background: rgba(0,0,0,0.35);
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  text-align: center;
+}
+
+/* REASONS */
+
+.reasons {
+  background: #fff0f3;
+  text-align: center;
+}
+
+.reason-box {
+  max-width: 650px;
+  min-height: 180px;
+  margin: auto;
+  padding: 40px 25px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(100,40,50,0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#reason {
+  font-size: 25px;
+  color: #87384f;
+  line-height: 1.5;
+  transition: opacity 0.3s;
+}
+
+.reason-btn {
+  margin: 25px auto 0;
+  padding: 12px 24px;
+  border: 1px solid #b65a72;
+  color: #913b53;
+  background: white;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+}
+
+/* FINAL SURPRISE */
+
+.surprise {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background:
+    radial-gradient(circle at center, #ffdce5, #fff5f7 60%);
+}
+
+.surprise-box {
+  max-width: 700px;
+}
+
+.surprise-box h2 {
+  font-size: clamp(40px, 8vw, 70px);
+  color: #8d334b;
+  margin-bottom: 20px;
+}
+
+.surprise-box p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #68434b;
+}
+
+.reveal-btn {
+  margin-top: 30px;
+  padding: 16px 35px;
+  border: none;
+  border-radius: 50px;
+  background: #963b55;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 10px 30px rgba(150,59,85,0.25);
+}
+
+#secret {
+  display: none;
+  margin-top: 30px;
+  font-size: 22px;
+  color: #963b55;
+  animation: fadeIn 1s ease;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 35px 20px;
+  text-align: center;
+  background: #7d3046;
+  color: #ffeef2;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+}
+
+/* ANIMATION */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+  section {
+    padding: 70px 15px;
+  }
+
+  .letter {
+    padding: 30px 22px;
+    font-size: 16px;
+  }
+
+  .timeline::before {
+    left: 10px;
+  }
+
+  .memory,
+  .memory:nth-child(even) {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 40px;
+    padding-right: 10px;
+    text-align: left;
+  }
+
+  .memory::after,
+  .memory:nth-child(even)::after {
+    left: -2px;
+    right: auto;
+  }
+
+  .photo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .photo {
+    height: 350px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- FLOATING HEARTS -->
+
+<div class="hearts" id="hearts"></div>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="small-text">
+      A little something for you
+    </div>
+
+    <h1>
+      Happy Girlfriend's Day
+      <span>Puchki 🌸</span>
+    </h1>
+
+    <p>
+      I could have just sent you a message...
+      but you deserve something a little more special...
+    </p>
+
+    <button
+      class="open-btn"
+      onclick="document.getElementById('letter').scrollIntoView()">
+      Open your letter 💌
+    </button>
+
+  </div>
+
+  <div class="scroll">
+    ↓ SCROLL DOWN ↓
+  </div>
+
+</section>
+
+
+<!-- LETTER -->
+
+<section class="letter-section" id="letter">
+
+  <div class="section-title">
+    <small>From Ron to Puchki</small>
+    <h2>A Little Letter</h2>
+  </div>
+
+  <div class="letter">
+
+    <p>
+      Hey, <strong>Puchki</strong> 💗
+    </p>
+
+    <p>
+      Happy Girlfriend's Day, Babe! 🌷
+    </p>
+
+    <p>
+      I don't know if a website can properly explain
+      how much someone means to you, but I wanted to
+      try anyway.
+    </p>
+
+    <p>
+      Puchki... I hope you are doing well because I am so much concerned about you. What you eat, what you do everything about you is very concerning to me. It's not because you are a kid or because I don't trust you. Actually, it's because I want you to be fine, and yk I can't always be with you for now. So I want you to be self-aware of the things that could harm you and always take care of yourself.
+    </p>
+
+    <p>
+      No matter how much I brag about your personality and your kindness, it's ineffable. The love I have for you, the way I adore you, respect you, and admire you it's beyond words. I respect your decisions because you know what's right and what's wrong, so I leave most things to you. But I am always here to give you suggestions, not because I want to control your life, but because I don't want you to make mistakes or follow a wrong path that could ruin your life or your future.
+    </p>
+
+    <p>
+      I want you to be successful so that people don't call you bondhu like me. I want them to know you for the amazing person you are. My little baby bondhu, my princess... I don't ever want to lose you not this time, not in the next life, not in any lifetime. The thought of losing you terrifies me more than I can ever explain.
+I can't even imagine how terrifying it is for me to think that another man could touch you other than me. I hope you will always be mine. Please never ever go away from me. And this time, I don't... I do not... I would not wish for you to be happy with someone else in a relationship at all. Maybe that's selfish, maybe it's a little toxic, but that's how deeply I love you. I want the fullest right to own you, my princess. I want to protect you, care for you, stand beside you through everything, and remind you every single day how precious you are to me.
+    </p>
+
+    <p>
+      No matter what happens, I will always choose you. I will always pray for your happiness, your health, your dreams, and your future. Just promise me you'll always take care of yourself, because every smile of yours means the world to me, and every tear of yours breaks my heart. I love you more than words could ever express, my princess. 
+    </p>
+
+    <p>
+      Happy Girlfriend's Day, Puchki. 🌸
+    </p>
+
+    <div class="signature">
+      — Ron 
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- MEMORIES -->
+
+<section class="memories">
+
+  <div class="section-title">
+    <small>Our little story</small>
+    <h2>Some Memories</h2>
+  </div>
+
+  <div class="timeline">
+
+    <div class="memory">
+      <h3>🌸 The Beginning</h3>
+      <p>
+       January 1st, 2024...at 12:37 am ..the day we met. I still remember how I texted you, “May I know who you are? And how I said do you know me.."  
+
+And you wished me"Happy New Year" 
+
+Who knew that such a simple message would be the beginning of everything? From that first conversation to slowly getting closer, sharing more about ourselves, and eventually becoming such an important part of each other’s lives...
+ I still find it amazing how it all started. ....
+
+
+      </p>
+    </div>
+
+    <div class="memory">
+      <h3>🌷 A Special Day</h3>
+      <p>
+        A My birthday...I honestly never expected it to turn out this perfect...Your efforts, the little things you did, and everything you put into making it special...I adore all of it, and I adore you even more........the flowers the cards the letters....ahh I love you babee
+
+You’re the person who gave me what I can genuinely call the best birthday of my life, and I’ll always cherish that.....
+      </p>
+    </div>
+
+    <div class="memory">
+      <h3>💐 June 9</h3>
+      <p>
+        One of those dates that became a little
+        more special because of you.
+      </p>
+    </div>
+
+    <div class="memory">
+      <h3>✨ Today</h3>
+      <p>
+        And our story is still being written...
+        with hopefully many more memories ahead.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PHOTOS -->
+
+<section class="photos">
+
+  <div class="section-title">
+    <small>My Home 🥹</small>
+    <h2> HER 🌸</h2>
+  </div>
+
+  <div class="photo-grid">
+
+    <!-- Replace these image URLs with your photos -->
+
+    <div class="photo">
+
+  <img src="https://i.ibb.co/Zz6QrmrL/Screenshot-20260730-043900.png
+    auto=format&fit=crop&w=800&q=80" alt="Memory">
+
+      <span>
+        My babyy girl 🌸
+      </span>
+
+    </div>
+
+
+    <div class="photo">
+
+      <img
+        src="https://i.ibb.co/QjkDy03P/Screenshot-20260730-043440.png
+        auto=format&fit=crop&w=800&q=80"
+        alt="Memory">
+
+      <span>
+    Her charming eyes 👀💗
+      </span>
+
+    </div>
+
+
+    <div class="photo">
+
+<img
+  src="https://i.ibb.co/4gg7q9qf/IMG-20260728-184644-903.jpg"
+  
+  alt="Memory">
+
+      <span>
+        And many more to come ✨
+      </span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- REASONS -->
+
+<section class="reasons">
+
+  <div class="section-title">
+
+    <small>
+      A random little game
+    </small>
+
+    <h2>
+      Why You're Special
+    </h2>
+
+  </div>
+
+
+  <div class="reason-box">
+
+    <div id="reason">
+      Click the button 👀
+    </div>
+
+    <button
+      class="reason-btn"
+      onclick="newReason()">
+
+      Tell me another ❤️
+
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- FINAL SURPRISE -->
+
+<section class="surprise">
+
+  <div class="surprise-box">
+
+    <div class="small-text">
+      Wait... there's one more thing
+    </div>
+
+    <h2>
+      One Last Surprise ❤️
+    </h2>
+
+    <p>
+      Puchki, you made it all the way here...
+      so I think you deserve one last message.
+    </p>
+
+    <button
+      class="reveal-btn"
+      onclick="revealSecret()">
+
+      Click this 👀
+
+    </button>
+
+    <div id="secret">
+
+      Puchki... ❤️
+
+      <br><br>
+
+      No matter how long this page gets,
+      it still wouldn't be enough space
+      to write every good thing about you.
+
+      <br><br>
+
+      I'm really happy that you're a part
+      of my story.
+
+      <br><br>
+
+      Happy Girlfriend's Day 🌷
+
+      <br><br>
+
+      — Ron ❤️
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  Made with ❤️ by Ron
+
+  <br><br>
+
+  For Puchki 🌷
+
+</footer>
+
+
+<script>
+
+/* REASONS */
+
+const reasons = [
+
+  "Because you make ordinary moments feel special. ❤️",
+
+  "Because your presence can make a bad day a little better.",
+
+  "Because some memories are simply better when you're part of them. 🌸",
+
+  "Because you are uniquely you — and that's something worth appreciating.",
+
+  "Because I can never fit everything I want to say into one website. ❤️",
+
+  "Because you became an important part of my story.",
+
+  "Because there are still so many memories left to make. ✨",
+
+  "Because you're my Puchki. And that's reason enough. ❤️"
+
+];
+
+let reasonIndex = 0;
+
+
+function newReason() {
+
+  const reason = document.getElementById("reason");
+
+  reason.style.opacity = "0";
+
+  setTimeout(() => {
+
+    reason.textContent =
+      reasons[reasonIndex];
+
+    reasonIndex++;
+
+    if (reasonIndex >= reasons.length) {
+      reasonIndex = 0;
+    }
+
+    reason.style.opacity = "1";
+
+  }, 300);
+
+}
+
+
+/* SECRET MESSAGE */
+
+function revealSecret() {
+
+  const secret =
+    document.getElementById("secret");
+
+  secret.style.display = "block";
+
+  createHearts(30);
+
+}
+
+
+/* FLOATING HEARTS */
+
+function createHeart() {
+
+  const container =
+    document.getElementById("hearts");
+
+  const heart =
+    document.createElement("div");
+
+  heart.classList.add("heart");
+
+  const symbols = [
+    "❤️",
+    "💕",
+    "💗",
+    "🌸",
+    "✨"
+  ];
+
+  heart.innerHTML =
+    symbols[
+      Math.floor(
+        Math.random() * symbols.length
+      )
+    ];
+
+  heart.style.left =
+    Math.random() * 100 + "vw";
+
+  heart.style.fontSize =
+    (12 + Math.random() * 18) + "px";
+
+  heart.style.animationDuration =
+    (5 + Math.random() * 5) + "s";
+
+  container.appendChild(heart);
+
+  setTimeout(() => {
+
+    heart.remove();
+
+  }, 10000);
+
+}
+
+
+function createHearts(number) {
+
+  for (let i = 0; i < number; i++) {
+
+    setTimeout(() => {
+
+      createHeart();
+
+    }, i * 80);
+
+  }
+
+}
+
+
+setInterval(createHeart, 900);
+
+</script>
+
+</body>
+</html>
